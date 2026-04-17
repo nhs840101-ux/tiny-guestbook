@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiny Guestbook</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>Tiny Guestbook</h1>
+        <p class="intro">
+          Leave a short message. Entries are saved in PostgreSQL and shown with
+          the newest one first.
+        </p>
+
+        <form id="guestbook-form" class="guestbook-form">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            maxlength="100"
+            placeholder="Your name"
+            required
+          />
+
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            maxlength="500"
+            placeholder="Write a message"
+            required
+          ></textarea>
+
+          <button type="submit">Save Entry</button>
+          <p id="status" class="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Entries</h2>
+        <div id="entries" class="entries"></div>
+      </section>
+    </main>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
